@@ -16,15 +16,15 @@
 
 ### HTML
 -  [X] Primer HTML
--  [ ] Secciones
+-  [X] Secciones
 -  [X] Títulos
--  [ ] Listas
--  [ ] Link
--  [ ] Tablas I
--  [ ] Tablas II
--  [ ] Tablas III
--  [ ] Tablas VI
--  [ ] Comentarios
+-  [X] Listas
+-  [X] Link
+-  [X] Tablas I
+-  [X] Tablas II
+-  [X] Tablas III
+-  [X] Tablas VI
+-  [X] Comentarios
 -  [ ] Formulario
 -  [ ] Accesibilidad
 -  [ ] Multimedia
