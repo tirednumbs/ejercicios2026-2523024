@@ -27,7 +27,7 @@
 -  [X] Comentarios
 -  [X] Formulario
 -  [X] Accesibilidad
--  [ ] Multimedia
+-  [X] Multimedia
 
 ### CSS
 -  [ ] Propiedades tipográficas
