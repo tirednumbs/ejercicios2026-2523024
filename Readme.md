@@ -25,8 +25,8 @@
 -  [X] Tablas III
 -  [X] Tablas VI
 -  [X] Comentarios
--  [ ] Formulario
--  [ ] Accesibilidad
+-  [X] Formulario
+-  [X] Accesibilidad
 -  [ ] Multimedia
 
 ### CSS

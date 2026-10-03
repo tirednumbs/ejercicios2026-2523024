@@ -25,9 +25,10 @@
       <fieldset>
         <legend>Formulario de Registro</legend>
         <p>
-          Nombre:
+          <label for="nombre">Nombre:</label>
           <input
             type="text"
+            id="nombre"
             name="nombre"
             placeholder="Nombre"
             size="40"
@@ -35,9 +36,10 @@
           />
         </p>
         <p>
-          Apellido:
+          <label for="apellido">Apellido:</label>
           <input
             type="text"
+            id="apellido"
             name="apellido"
             placeholder="Apellido"
             size="40"
@@ -45,18 +47,19 @@
           />
         </p>
         <p>
-          Sexo: Masculino
-          <input type="radio" name="sexo" value="masculino" /> Femenino
-          <input type="radio" name="sexo" value="femenino" />
+          Sexo: <label for="sexo_masculino">Masculino</label>
+          <input type="radio" id="sexo_masculino" name="sexo" value="masculino" /> <label for="sexo_femenino">Femenino</label>
+          <input type="radio" id="sexo_femenino" name="sexo" value="femenino" />
         </p>
         <p>
-          Edad:
-          <input type="number" name="edad" placeholder="Edad" maxlength="3" />
+          <label for="edad">Edad:</label>
+          <input type="number" id="edad" name="edad" placeholder="Edad" maxlength="3" />
         </p>
         <p>
-          Email:
+          <label for="email">Email:</label>
           <input
             type="email"
+            id="email"
             name="email"
             placeholder="email@dominio.com"
             size="40"
@@ -64,9 +67,10 @@
           />
         </p>
         <p>
-          Usuario:
+          <label for="usuario">Usuario:</label>
           <input
             type="text"
+            id="usuario"
             name="usuario"
             placeholder="usuario"
             size="40"
@@ -74,9 +78,10 @@
           />
         </p>
         <p>
-          Password:
+          <label for="pass">Password:</label>
           <input
             type="password"
+            id="pass"
             name="pass"
             placeholder="password"
             size="40"
@@ -84,9 +89,10 @@
           />
         </p>
         <p>
-          Confirmar Password:
+          <label for="confirmar_pass">Confirmar Password:</label>
           <input
             type="password"
+            id="confirmar_pass"
             name="confirmar_pass"
             placeholder="password"
             size="40"
@@ -94,21 +100,21 @@
           />
         </p>
         <p>
-          Tipo de servicio: Free
-          <input type="checkbox" name="tipo_servicio" value="free" /> / Standard
-          <input type="checkbox" name="tipo_servicio" value="standard" /> /
-          Premium <input type="checkbox" name="tipo_servicio" value="premium" />
+          Tipo de servicio: <label for="servicio_free">Free</label>
+          <input type="checkbox" id="servicio_free" name="tipo_servicio" value="free" /> / <label for="servicio_standard">Standard</label>
+          <input type="checkbox" id="servicio_standard" name="tipo_servicio" value="standard" /> /
+          <label for="servicio_premium">Premium</label> <input type="checkbox" id="servicio_premium" name="tipo_servicio" value="premium" />
         </p>
         <p>
-          Tema:
-          <select>
+          <label for="tema">Tema:</label>
+          <select id="tema">
             <option>Política</option>
             <option>Negocios</option>
             <option>Tecnología</option>
             <option>Salud</option>
           </select>
         </p>
-        <p>Agregue un comentario: <textarea></textarea></p>
+        <p><label for="comentario">Agregue un comentario:</label> <textarea id="comentario"></textarea></p>
         <p>
           <input type="submit" value="Boton de Enviar" />
         </p>
