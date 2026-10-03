@@ -30,7 +30,7 @@
 -  [X] Multimedia
 
 ### CSS
--  [ ] Propiedades tipográficas
+-  [X] Propiedades tipográficas
 -  [ ] Incrustado
 -  [ ] Estilo con Descendientes
 -  [ ] Pseudo Clases
