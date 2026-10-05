@@ -84,12 +84,10 @@ function sumar() {
     const n2 = document.getElementById("nums2").value;
     const totalS = document.getElementById("totalS");
 
-    totalS.disabled = true;
-
     if (n1 !== "" && n2 !== "") {
-        totalS.value = Number(n1) + Number(n2);
+        totalS.innerHTML = Number(n1) + Number(n2);
     } else {
-        totalS.value = "";
+        totalS.innerHTML = "";
     }
 }
 
