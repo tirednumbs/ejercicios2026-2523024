@@ -37,7 +37,7 @@
 -  [X] CV
 -  [X] Backgrounds
 -  [X] Position
--  [ ] 2 Columnas
+-  [X] 2 Columnas
 -  [ ] Grid
 -  [ ] grid-areas
 -  [ ] Mejora
