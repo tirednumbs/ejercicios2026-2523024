@@ -68,3 +68,76 @@ function mostrar_ocultar(valorMO) {
         document.getElementById("divMO").style.display = 'none';
     }
 }
+
+/**
+ * Operación Suma
+ */
+function sumar() {
+    const n1 = document.getElementById("nums1").value;
+    const n2 = document.getElementById("nums2").value;
+    const totalS = document.getElementById("totalS");
+
+    totalS.disabled = true;
+
+    if (n1 !== "" && n2 !== "") {
+        totalS.value = Number(n1) + Number(n2);
+    } else {
+        totalS.value = "";
+    }
+}
+
+/**
+ * Operación Resta
+ */
+function restar() {
+    const n1 = document.getElementById("numr1").value;
+    const n2 = document.getElementById("numr2").value;
+    const totalR = document.getElementById("totalR");
+
+    totalR.disabled = true;
+
+    if (n1 !== "" && n2 !== "") {
+        totalR.value = Number(n1) - Number(n2);
+    } else {
+        totalR.value = "";
+    }
+}
+
+/**
+ * Operación Multiplicación
+ */
+function multiplicar() {
+    const n1 = document.getElementById("numm1").value;
+    const n2 = document.getElementById("numm2").value;
+    const totalM = document.getElementById("totalM");
+
+    totalM.disabled = true;
+
+    if (n1 !== "" && n2 !== "") {
+        totalM.value = Number(n1) * Number(n2);
+    } else {
+        totalM.value = "";
+    }
+}
+
+/**
+ * Operación División
+ */
+function dividir() {
+    const n1 = document.getElementById("numd1").value;
+    const n2 = document.getElementById("numd2").value;
+    const totalD = document.getElementById("totalD");
+
+    totalD.disabled = true;
+
+    if (n1 !== "" && n2 !== "") {
+        const val2 = Number(n2);
+        if (val2 === 0) {
+            totalD.value = "Error: Div / 0";
+        } else {
+            totalD.value = Number(n1) / val2;
+        }
+    } else {
+        totalD.value = "";
+    }
+}
