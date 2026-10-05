@@ -11,11 +11,18 @@ const cambiarUnidades = (id, valor) => {
     let pie = "";
     let yarda = "";
 
+    if(valor.includes(",")){
+        valor = valor.replace(",", ".");
+    }
+
     if (isNaN(valor)) {
         alert("Se ingresó un valor inválido.");
+        metro = "";
+        pulgada = "";
+        pie = "";
+        yarda = "";
     } else {
         valor = Number(valor);
-
         if (id === "metro") {
             metro = valor;
             pulgada = 39.3701 * valor;
@@ -39,10 +46,10 @@ const cambiarUnidades = (id, valor) => {
         }
     }
 
-    document.units.unid_metro.value = metro;
-    document.units.unid_pulgada.value = pulgada;
-    document.units.unid_pie.value = pie;
-    document.units.unid_yarda.value = yarda;
+    document.units.unid_metro.value = Math.round(metro*100)/100;
+    document.units.unid_pulgada.value = Math.round(pulgada*100)/100;
+    document.units.unid_pie.value = Math.round(pie*100)/100;
+    document.units.unid_yarda.value = Math.round(yarda*100)/100;
 };
 
 const convertirGR = (id) => {
