@@ -1,0 +1,23 @@
+body{
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+    background: linear-gradient(70deg, rgb(103, 102, 102), rgb(212, 198, 198));
+}
+div{
+    border: 2px dashed gold;
+    margin: 10px;
+    padding: 5px 30px;
+    border-radius: 15px;
+    box-shadow: 9px 10px goldenrod;
+    opacity: 85%;
+}
+#fp{
+    width: 50px;
+    float: left;
+    border-radius: 50%;
+}
+div.particular h3{
+    font-family: "Roboto Condensed", sans-serif;
+    font-weight: 400;
+    text-shadow: 8px 4px rgb(186, 164, 164);
+}
