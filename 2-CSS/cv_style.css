@@ -21,3 +21,6 @@ div.particular h3{
     font-weight: 400;
     text-shadow: 8px 4px rgb(186, 164, 164);
 }
+div.principal {
+    position: fixed;
+}
