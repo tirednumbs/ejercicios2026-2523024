@@ -62,7 +62,9 @@ const productos = [
   },
 ];
 
-let mostrarModal = () => {
+let mostrarModal = (id) => {
+  document.getElementById("titulo-producto").innerText = productos[id].nombre;
+  document.getElementById("descr-producto").innerText = productos[id].description;
   document.getElementById("modal").style.display = "block";
 };
 
@@ -81,7 +83,7 @@ let cargarProductos = () => {
         />
         <h3>${elemento.nombre}</h3>
         <p>${elemento.precio}</p>
-        <button type="button" onclick="mostrarModal()">
+        <button type="button" onclick="mostrarModal(${id})">
           Ver Detalle del Producto
         </button>
       </div>`
