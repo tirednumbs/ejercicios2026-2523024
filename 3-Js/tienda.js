@@ -86,10 +86,49 @@ let cargarProductos = () => {
         <button type="button" onclick="mostrarModal(${id})">
           Ver Detalle del Producto
         </button>
+        <button type="button" onclick="agregarAlcarrito(${id})">
+          Agregar al Carrito
+        </button>
       </div>`
 
     document.getElementById("mostrar-catalogo").innerHTML = contenido;
 
   })
 
-}
+};
+
+let agregarAlcarrito = (id) => {
+  let carritoList = localStorage.getItem("carrito");
+
+  if(carritoList == null){
+    carritoList = [];
+  } else {
+    carritoList = JSON.parse(carritoList);
+  }
+
+  carritoList.push(id);
+
+  console.log(carritoList);
+
+  localStorage.setItem("carrito", JSON.stringify(carritoList));
+
+};
+
+let cargarCarrito = () => {
+  let carritoList = localStorage.getItem("carrito");
+  let contenido = "";
+
+  if(carritoList == null){
+    contenido = "<div>Su carrito está vacío.</div>"
+  } else {
+    carritoList = JSON.parse(carritoList);
+
+    carritoList.array.forEach(num => {
+      contenido += `<div>
+        <h3>${productos[num].nombre}</h3>
+        <p>${productos[num].precio}</p></div>`;
+    });
+  }
+
+  document.getElementById("mostrar-carrito").innerHTML = contenido;
+};
