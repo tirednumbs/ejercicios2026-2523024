@@ -72,10 +72,10 @@ let cerrarModal = () => {
   document.getElementById("modal").style.display = "none";
 };
 
-let cargarProductos = () => {
+let cargarProductos = (prod = productos) => {
   let contenido = "";
 
-  productos.forEach((elemento, id) => {
+  prod.forEach((elemento, id) => {
     contenido += `<div>
         <img
           src="${elemento.imagen}"
@@ -154,4 +154,48 @@ let eliminarProducto = (id) => {
 
   
   window.location.reload();
+};
+
+let filtrarProductos = () => {
+  let searchWord = document.getElementById("search").value;
+  let min = document.getElementById("minimo").value;
+  let max = document.getElementById("maximo").value;
+  let marca = document.getElementById("marca").value;
+  let prot = document.getElementById("protectores").checked;
+  let entr = document.getElementById("entrenamiento").checked;
+  let dob = document.getElementById("dobok").checked;
+
+  let newLista = productos;
+
+  if(searchWord){
+    newLista = newLista.filter((prod) => 
+      prod.nombre.toLowerCase().includes(searchWord.toLowerCase()) ||
+      prod.description.toLowerCase().includes(searchWord.toLowerCase())
+    );
+  }
+
+  if(min){
+    newLista = newLista.filter((prod) => prod.precio >= min);
+  }
+
+  if(max){
+    newLista = newLista.filter((prod) => prod.precio <= max);
+  }
+
+  if(marca !== "Todas") {
+    newLista = newLista.filter((prod) => prod.marca === marca);
+  }
+
+  let category = [];
+
+  prot ? category.push("Protectores") : "";
+  entr ? category.push("Entrenamiento") : "";
+  dob ? category.push("Dobok") : "";
+
+  if (category.length > 0) {
+    newLista = newLista.filter((prod) => category.includes(prod.categoria));
+  }
+
+
+  cargarProductos(newLista);
 }
