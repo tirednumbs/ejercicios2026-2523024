@@ -123,12 +123,35 @@ let cargarCarrito = () => {
   } else {
     carritoList = JSON.parse(carritoList);
 
-    carritoList.array.forEach(num => {
+    carritoList.forEach((num, id) => {
       contenido += `<div>
         <h3>${productos[num].nombre}</h3>
-        <p>${productos[num].precio}</p></div>`;
+        <p>${productos[num].precio}</p>
+        <button type="button" onclick="eliminarProducto(${id})">Eliminar Producto</button>
+        </div>`;
     });
+    contenido += `<button type="button" onClick="vaciarCarrito()">Vaciar Carrito</button>`;
   }
-
+  
   document.getElementById("mostrar-carrito").innerHTML = contenido;
 };
+
+let vaciarCarrito = () => {
+  localStorage.removeItem("carrito");
+  window.location.reload();
+};
+
+let eliminarProducto = (id) => {
+  let carritoList = localStorage.getItem("carrito");
+  carritoList = JSON.parse(carritoList);
+  carritoList.splice(id, 1);
+
+  if(carritoList?.length > 0){
+    localStorage.setItem("carrito", JSON.stringify(carritoList));
+  } else {
+    localStorage.removeItem("carrito");
+  }
+
+  
+  window.location.reload();
+}
