@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import '@styles/index.css'
 import Login from './Login.jsx'
 import Layout from '@components/Layout.jsx'
-import Home from '@components/Header.jsx'
+import Home from '@pages/Home.jsx'
 import Activities from './Activities.jsx'
 
 createRoot(document.getElementById('root')).render(

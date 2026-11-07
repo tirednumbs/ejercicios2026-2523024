@@ -89,8 +89,8 @@
 -  [X] Redirección de Rutas
 -  [X] Outlet
 -  [X] Estructura del Proyecto
--  [ ] Imágenes
--  [ ] Children
+-  [X] Imágenes
+-  [X] Children
 
 
 ## Unidad 7: Backend y APIs
