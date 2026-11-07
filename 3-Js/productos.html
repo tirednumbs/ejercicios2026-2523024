@@ -7,11 +7,12 @@
     <link rel="stylesheet" href="catalogo.css" type="text/css" />
     <script src="tienda.js" type="text/javascript"></script>
   </head>
-  <body class="grid-container" onload="cargarProductos()">
+  <body class="grid-container" onload="cargarProductos();contarProductos()">
     <header class="item1">Catalogo de Productos</header>
     <nav class="item2">
       <a href="productos.html">Catalogo de Productos</a>
       <a href="carrito.html">Carrito de Compras</a>
+      <div id="cant-prod">0</div>
     </nav>
     <aside class="item3">
       <form name="filter">
