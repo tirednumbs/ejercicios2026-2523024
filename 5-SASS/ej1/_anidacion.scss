@@ -1,0 +1,25 @@
+@use 'mixins' as *;
+
+.caja {
+  @include estilo-caja(white);
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.caja-secundaria {
+  @include estilo-caja(orange);
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+}
