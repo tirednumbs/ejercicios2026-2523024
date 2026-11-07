@@ -118,22 +118,45 @@ let agregarAlcarrito = (id) => {
 let cargarCarrito = () => {
   let carritoList = localStorage.getItem("carrito");
   let contenido = "";
+  let total = 0;
 
-  if(carritoList == null){
-    contenido = "<div>Su carrito está vacío.</div>"
+  if (carritoList == null || JSON.parse(carritoList).length === 0) {
+    contenido = "<div>Su carrito está vacío.</div>";
   } else {
+    const listProd = [];
+    const listCant = [];
+
     carritoList = JSON.parse(carritoList);
 
-    carritoList.forEach((num, id) => {
-      contenido += `<div>
-        <h3>${productos[num].nombre}</h3>
-        <p>${formatPrice(productos[num].precio)}</p>
-        <button type="button" onclick="eliminarProducto(${id})">Eliminar Producto</button>
-        </div>`;
+    carritoList.forEach((num) => {
+      const inx = listProd.indexOf(num);
+      if (inx === -1) {
+        listProd.push(num);
+        listCant.push(1);
+      } else {
+        listCant[inx] += 1;
+      }
     });
-    contenido += `<button type="button" onClick="vaciarCarrito()">Vaciar Carrito</button>`;
+
+    listProd.forEach((num, inx) => {
+      const element = productos[num];
+      const cantidad = listCant[inx];
+      const subtotal = element.precio * cantidad;
+
+      contenido += `<div>
+        <h3>${element.nombre}</h3>
+        <p>${formatPrice(element.precio)} x ${cantidad} = ${formatPrice(subtotal)}</p>
+        <p>Cantidad: ${cantidad}</p>
+        <button type="button" onclick="eliminarProducto(${num})">Eliminar Producto</button>
+      </div>`;
+
+      total += subtotal;
+    });
+
+    contenido += `<p><strong>Total: ${formatPrice(total)}</strong></p>`;
+    contenido += `<button type="button" onclick="vaciarCarrito()">Vaciar Carrito</button>`;
   }
-  
+
   document.getElementById("mostrar-carrito").innerHTML = contenido;
 };
 
